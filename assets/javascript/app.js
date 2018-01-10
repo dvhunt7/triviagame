@@ -33,11 +33,16 @@ function countdown(){
 
 	function gameOver() {
 		checker();
-		$("#questions").html("<h1>Your score:</h1><br><p>Correct answers: <span id='correct'></span><br><p>Wrong answers: <span id='incorrect'></span>")
+		$("#questions").html("<h1>Your score:</h1><br><p>Correct answers: <span id='correct'></span><br><p>Wrong answers: <span id='incorrect'></span><br>")
 		$("#correct").text(right);
 		$("#incorrect").text(wrong);
 		$("#timer").hide();
-
+		if (right == 4) {
+			$("#dio").html("<img src=assets/images/yourock.jpg height='500px' width='500px'/>")
+		}
+		else{
+			$("#dio").html("<img src=assets/images/cooper.jpg height='400px' width='600px'/>")			
+		}
 	}
 
 function checker() {
