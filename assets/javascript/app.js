@@ -1,6 +1,7 @@
 
-
-var timeLeft = 31;
+var right = 0;
+var wrong = 0;
+var timeLeft = 5;
 
 
 $("#start").on("click", function(){
@@ -25,7 +26,10 @@ function countdown(){
 }
 
 	function gameOver() {
-		alert("hi");
+		$("#questions").html("<h1>Your score:</h1><br><p>Correct answers: <span id='correct'></span><br><p>Wrong answers: <span id='incorrect'></span>")
+		$("#correct").text(right);
+		$("#incorrect").text(wrong);
+		$("#timer").hide();
 
 	}
 
