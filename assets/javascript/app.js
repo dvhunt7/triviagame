@@ -1,12 +1,18 @@
 
 var right = 0;
 var wrong = 0;
-var timeLeft = 5;
+var timeLeft = 31;
 
 
 $("#start").on("click", function(){
 	$(this).hide();
+	$("#questions").css("visibility", "visible")
 	countdown();
+})
+
+$("#done").on("click", function(){
+	gameOver();
+	timeLeft = 0;
 })
 
 function countdown(){
@@ -26,6 +32,7 @@ function countdown(){
 }
 
 	function gameOver() {
+		checker();
 		$("#questions").html("<h1>Your score:</h1><br><p>Correct answers: <span id='correct'></span><br><p>Wrong answers: <span id='incorrect'></span>")
 		$("#correct").text(right);
 		$("#incorrect").text(wrong);
@@ -33,18 +40,40 @@ function countdown(){
 
 	}
 
+function checker() {
+
+	 if  ($("#correct1").is(":checked")) {
+
+	 	right++;
+	 }
+	 else {
+	 	wrong++;}
+
+	 if ($("#correct2").is(":checked")){
+	 	right++;}
+	 else {
+	 	wrong++;
+	 }
+
+	 if ($("#correct3").is(":checked")){
+	 	right++;}
+	 else {
+	 	wrong++;
+	 }
+
+	 if ($("#correct4").is(":checked")){
+	 	right++;}
+	 else {
+	 	wrong++;
+	 }
+
+	 }
 
 
 
-//function countdown() {
- // if (timeLeft == 0) {
-//    clearTimeout(timerId);
-//    gameOver();
-//  } else {
-//    $("#timer").text(timeLeft + ' seconds remaining');
-//    timeLeft--;
-//  }
-//}
+
+
+
 //var timer counts down
 //questions are pushed to html
 
